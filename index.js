@@ -1,7 +1,7 @@
 import { fifaData } from './fifa.js';
-console.log(fifaData);
+// console.log(fifaData);
 
-console.log('its working');
+// console.log('its working');
 // ⚽️ M  V P ⚽️ //
 
 /* Task 1: Investigate the data above. Practice accessing data by console.log-ing the following pieces of data 
@@ -31,19 +31,23 @@ console.log('its working');
 function getFinals(data) {
 let finalsOnly = data.filter((item) => {
     return (item.Stage === "Final")
-})
+}) 
+return finalsOnly
 
 };
 console.log(getFinals(fifaData))
 /* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
-function getYears(/* code here */) {
+function getYears(cb1) {
 
-    /* code here */
+    let years = cb1.filter((item) => {
+        return (item.year)
+    }) 
+    return years
 
 };
 
-getYears();
+console.log(getYears(getFinals(fifaData)));
 
 /* Task 4: Implement a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */ 
 
